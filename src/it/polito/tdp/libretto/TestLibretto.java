@@ -31,6 +31,8 @@ public class TestLibretto {
 		Voto esiste = new Voto(18, "Geometria", LocalDate.of(2017, 9, 1));
 		Voto nonEsiste = new Voto(28, "Geometria", LocalDate.of(2017, 9, 1));
 		Voto mancante = new Voto(28, "Filosofia", LocalDate.of(2017, 9, 1));
+		
+		/*
 		System.out.format("Il voto %s è %s\n", esiste.toString(), libr.esisteGiaVoto(esiste));
 		System.out.format("Il voto %s è %s\n", nonEsiste.toString(), libr.esisteGiaVoto(nonEsiste));
 		System.out.format("Il voto %s è %s\n", mancante.toString(), libr.esisteGiaVoto(mancante));
@@ -38,7 +40,14 @@ public class TestLibretto {
 		System.out.format("Il voto %s è in conflitto %s\n", esiste.toString(), libr.votoConflitto(esiste));
 		System.out.format("Il voto %s è in conflitto %s\n", nonEsiste.toString(), libr.votoConflitto(nonEsiste));
 		System.out.format("Il voto %s è in conflitto %s\n", mancante.toString(), libr.votoConflitto(mancante));
-
+		*/
+		
+		libr.add(esiste);
+		libr.add(nonEsiste);
+		libr.add(mancante);
+		
+		System.out.println(libr.toString());
+		
 	}
 
 } 

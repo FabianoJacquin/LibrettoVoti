@@ -15,9 +15,23 @@ public class Libretto {
 	 * Aggiunge un nuovo voto al libretto
 	 * 
 	 * @param v il {@link Voto} da aggiungere
+	 * @return {@code true} se ha aggiunto l'elemento 
+	 * {@code false} se ha non ha aggiunto l'elemento
+	 * 
 	 */
-	public void add(Voto v) {
-		voti.add(v);
+	public boolean add(Voto v) {
+		
+		if(!this.esisteGiaVoto(v) && !this.votoConflitto(v)) {
+
+			voti.add(v);
+			return true;
+
+		} else {
+			
+			return false;
+			
+		}
+		
 	}
 	
 	/**
