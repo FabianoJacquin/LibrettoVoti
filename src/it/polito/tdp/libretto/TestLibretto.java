@@ -27,6 +27,14 @@ public class TestLibretto {
 		Voto a3 = libr.cercaEsame("Analisi III");
 		System.out.println(a1);
 		System.out.println(a3);
+		
+		Voto esiste = new Voto(18, "Geometria", LocalDate.of(2017, 9, 1));
+		Voto nonEsiste = new Voto(28, "Geometria", LocalDate.of(2017, 9, 1));
+		Voto mancante = new Voto(28, "Filosofia", LocalDate.of(2017, 9, 1));
+		System.out.format("Il voto %s è %s\n", esiste.toString(), libr.esisteGiaVoto(esiste));
+		System.out.format("Il voto %s è %s\n", nonEsiste.toString(), libr.esisteGiaVoto(nonEsiste));
+		System.out.format("Il voto %s è %s\n", mancante.toString(), libr.esisteGiaVoto(mancante));
+
 
 	}
 

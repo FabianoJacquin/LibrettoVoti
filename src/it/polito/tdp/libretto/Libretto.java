@@ -47,12 +47,25 @@ public class Libretto {
 	 */
 	public Voto cercaEsame(String nomeEsame) {
 		
+		/*
 		for(Voto v: this.voti) {
 			if (v.getCorso().equals(nomeEsame))
 				return v;
 		}
+		*/
 		
-		return null;
+		Voto voto = new Voto(0, nomeEsame, null);
+		
+		//indexOf utilizza il metodo equals per eseguire il confronto
+		//in questo caso utilizza equals dell'oggetto Voto che è stato
+		//sovrascritto e restituisce true se il nome esame coincide
+		int pos = this.voti.indexOf(voto);
+		
+		if (pos == -1)
+			return null;
+		else
+			return this.voti.get(pos);
+
 		
 	}
 	
@@ -66,6 +79,7 @@ public class Libretto {
 	 */
 	public boolean esisteGiaVoto(Voto v) {
 		
+		 /*
 		Voto trovato = this.cercaEsame(v.getCorso());
 		
 		if(trovato == null) {
@@ -75,6 +89,15 @@ public class Libretto {
 		} else {
 			return false;
 		}
+		*/
+		
+		int pos = this.voti.indexOf(v);
+		
+		if (pos == -1) 
+			return false;
+		else 
+			return (v.getPunti() == this.voti.get(pos).getPunti());
+		 
 		
 	}
 
